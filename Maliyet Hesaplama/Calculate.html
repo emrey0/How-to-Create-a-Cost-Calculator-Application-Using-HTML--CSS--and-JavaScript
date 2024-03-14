@@ -1,0 +1,270 @@
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Edu+TAS+Beginner:wght@500;600&family=Electrolize&family=Varela+Round&display=swap');
+    </style>
+    
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Maliyet Hesaplama</title>
+        <style>
+            body {
+                font-family: 'Electrolize', Tahoma, Verdana, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-image: url('Photo 1.jpg');
+                background-size: cover;
+                position: relative;
+            }
+            .backup-background {
+                background-color: rgba(0, 0, 0, 0.5);
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+    
+            nav {
+                background-color: transparent;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 10px;
+                position: relative;
+                z-index: 1;
+            }
+    
+            nav a {
+                display: inline-block;
+                color: white;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                transition: background-color 0.3s;
+            }
+    
+            nav a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+    
+            nav a.active {
+                background-color: rgb(0, 245, 245);
+                color: white;
+            }
+    
+            .logo {
+                max-width: 100px;
+                max-height: 50px;
+                border-radius: 20%;
+            }
+    
+            .profile {
+                display: flex;
+                align-items: center;
+            }
+    
+            .profile img {
+                border-radius: 50%;
+                margin-right: 8px;
+                max-width: 35px;
+                max-height: 35px;
+            }
+    
+            .profile span {
+                color: white;
+            }
+    
+            .search-box {
+                display: flex;
+                align-items: center;
+                width: 200px;
+                background-color: #fff;
+                border-radius: 5px;
+                overflow: hidden;
+                margin-right: 16px;
+            }
+    
+            .search-box input {
+                border: none;
+                padding: 8px;
+                width: 100%;
+                outline: none;
+            }
+    
+            .search-box button {
+                background-color: #333;
+                color: #fff;
+                border: none;
+                padding: 8px 12px;
+                cursor: pointer;
+            }
+    
+            .content-container {
+                max-width: 800px;
+                margin: 0 auto;
+                background-color: rgba(0, 0, 0, 0.7);
+                padding: 20px;
+                border-radius: 8px;
+                position: relative;
+                z-index: 1;
+                text-align: left;
+                margin-top: 20px;
+            }
+    
+            .content {
+                padding: 16px;
+            }
+    
+            h3 {
+                color: #ffffff;
+                font-size: 24px;
+            }
+    
+            p {
+                color: #ffffff;
+                font-size: 16px;
+                line-height: 1.6;
+                margin-bottom: 12px;
+            }
+    
+            .blurred-background {
+                backdrop-filter: blur(8px);
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+            .welcome-image {
+                float: left;
+                max-width: 500px;
+                margin-left: 20px;
+                margin-right: 20px;
+                border-radius: 10px;
+            }
+            .number-box {
+                margin-bottom: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+    
+            .number-box label {
+                margin-right: 10px;
+                font-size: 16px;
+                font-weight: bold;
+                color:white;
+            }
+    
+            .number-box input {
+                width: 80px;
+                padding: 10px;
+                margin-right: 10px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+             .number-box input[type="number"]::-webkit-inner-spin-button,
+            .number-box input[type="number"]::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+    
+            .number-box input[type="number"] {
+                -moz-appearance: textfield;
+            }
+        </style>
+    </head>
+    <body>
+    
+    <nav>
+        <div>
+            <img src="Logo.png" alt="Logo" class="logo">
+        </div>
+        <div>
+            <a href="Ana Sayfa.html">Home Page</a>
+            <a href="Hakkında.html">About Us</a>
+            <a href="Bilgi.html">Information</a>
+            <a href="İletişim.html">Communication</a>
+            <a href="Hesapla.html">Calculate</a>
+        </div>
+        <div class="profile">
+            <div class="search-box">
+                <input type="text" placeholder="Search...">
+                <button type="button">Ara</button>
+            </div>
+        </div>
+    </nav>
+    
+    <div class="content-container">
+        <div class="content">
+    
+           <div class="number-box">
+                <label>Malzeme maliyetini girin:</label>
+                <input id="malzemeMaliyeti" type="number">
+            </div>
+            <div class="number-box">
+                <label>İşçilik maliyetini girin:</label>
+                <input id="iscilikMaliyeti" type="number">
+            </div>
+            <div class="number-box">
+                <label>Genel giderleri girin:</label>
+                <input id="genelGiderler" type="number">
+            </div>
+            <div class="number-box">
+                <label>İşçi Sayısını Girin:</label>
+                <input id="isciSayisi" type="number">
+            </div>
+            <div class="number-box">
+                <label>Vergi maliyetini girin:</label>
+                <input id="vergiMaliyeti" type="number">
+            </div>
+            <div class="number-box">
+                <label>Üretilen ürünün sayısını girin:</label>
+                <input id="uretilenUrunSayisi" type="number">
+            </div>
+            <div class="number-box">
+                <label>Kâr marjını girin (%):</label>
+                <input id="karMarji" type="number">
+            </div>
+    
+            <div class="result-box">
+                <button onclick="hesapla()">Hesapla</button>
+                <p class="result" id="sonuc"></p>
+            </div>
+    
+        </div>
+    
+            </div>
+        </div>
+    </div>
+    <script>
+        function hesapla() {
+            var malzemeMaliyeti = parseFloat(document.getElementById("malzemeMaliyeti").value);
+            var iscilikMaliyeti = parseFloat(document.getElementById("iscilikMaliyeti").value);
+            var genelGiderler = parseFloat(document.getElementById("genelGiderler").value);
+            var isciSayisi = parseFloat(document.getElementById("isciSayisi").value);
+            var vergiMaliyeti = parseFloat(document.getElementById("vergiMaliyeti").value);
+            var uretilenUrunSayisi = parseFloat(document.getElementById("uretilenUrunSayisi").value);
+            var karMarji = parseFloat(document.getElementById("karMarji").value);
+    
+            var toplamMaliyet = malzemeMaliyeti + iscilikMaliyeti + genelGiderler + isciSayisi + vergiMaliyeti;
+            var birimMaliyet = toplamMaliyet / uretilenUrunSayisi;
+            var satisFiyati = toplamMaliyet + (toplamMaliyet * (karMarji / 100));
+    
+            document.getElementById("sonuc").innerHTML = "Toplam Maliyet: " + toplamMaliyet.toFixed(2) +
+                "<br>Birim Maliyet: " + birimMaliyet.toFixed(2) +
+                "<br>Satış Fiyatı: " + satisFiyati.toFixed(2);
+        }
+    </script>
+    
+    </body>
+    </html>
